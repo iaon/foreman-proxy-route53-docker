@@ -1,0 +1,11 @@
+foreman-proxy-route53:
+  restart: always
+  ports:
+    - 8443:9443
+  environment:
+    AWS_KEYID: ""
+    AWS_KEY: ""
+    TRUSTED_HOST: "foreman.host"
+    FOREMAN_URL: "https://foreman.host"
+  volumes:
+    - /var/lib/puppet/ssl:/var/lib/puppet/ssl
